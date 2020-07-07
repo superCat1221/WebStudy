@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><p>hello</p></div>
+</body>
+</html>
+<script>
+
+    var text = document.getElementsByTagName('div')[0];
+    var text1 = text.getElementsByTagName('p')[0].innerText;
+    var text2 = text.getElementsByTagName('p')[0].innerHTML;
+    //text.innerText = '<i>iii</i>'
+    text.innerHTML = '<i>iii</i>'
+</script>

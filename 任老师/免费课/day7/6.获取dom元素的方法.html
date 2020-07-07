@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <ul id="ul">
+            <li class="a">1</li>
+            <li class="">2</li>
+            <li class="">3</li>
+           
+        </ul>
+        <ul></ul>
+        <li class="a">6</li>
+    </div>
+    <script>
+        /* 
+        获取dom的方法
+         */
+        // document.getElementById('id名')：通过id名去获取元素，获取的是一个元素对象，如果获取不到那就是null
+
+        // context.getElementsByTagName('标签名')：在指定的上下文中通过标签名获取元素,获取的值是一个元素集合(类数组)，如果获取不到就是空元素集合
+
+        // context.getElementsByClassName('类名')：在指定上下文中通过类名获取元素，获取的值是元素集合(类数组)，如果获取不到就是空元素集合
+
+        // context.querySelector():在指定的上下文中通过样式选择器获取元素，获取的值是一个元素，获取不到是null,如果有多个符合条件的元素，那就会获取第一个符合的
+
+        // context.querySelectorAll():在指定的上下文中通过样式选择器获取元素,获取的值是元素集合(类数组)，如果获取不到就是空元素集合
+
+        // document.body:获取body
+        // document.documentElement:获取html
+        // document.head:获取头部
+
+
+        // console.log(document.getElementById('box'))
+        // console.log(document.getElementsByTagName('div')[0]) // [div]获取div元素
+        // console.log(document.getElementsByClassName('a'))
+        // console.log(document.querySelector('ul>li'))
+
+        //  console.log(document.querySelectorAll('ul>.a'))
+
+    </script>
+</body>
+</html>

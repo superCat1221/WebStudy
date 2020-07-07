@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    var arr = [20,5,100,-10,30,2];
+
+    
+    
+
+    function arrSort(arr){
+        for( var i=0;i<arr.length;i++ ){
+            console.log(arr[i])
+            for(var j=i+1;j<arr.length;j++){
+                //  console.log(arr[j])
+                if(arr[i] > arr[j]){
+                    // console.log(arr[i])
+                    // console.log(arr[j])
+                    var temp = arr[j];
+                   // console.log(temp)
+                    arr[j] = arr[i];
+                    //console.log(arr[j])
+                    arr[i] = temp;
+                }
+            }
+
+        }
+        return  arr;
+    }
+   
+    console.log( arrSort(arr) );
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ary = [6,6,3,6];
+        /* 
+        1.创建一个空对象，把数组的每一项即作为属性名，又作为属性值存储到对象中，当你存储的时候，你的判断一下当前你正要存储的这个属性名在对象中有没有，如果有，那这一项在数组中就是重复项，就把这一项在数组中删除
+         */
+        // function unique(ary){
+        //     let obj = {};
+        //     for(var i = 0;i<ary.length;i++){
+        //         var cur = ary[i];
+        //         if(obj[cur] !== undefined){
+        //             ary[i] = ary[ary.legnth-1];
+        //             ary.length--;
+        //             i--;
+        //         }
+        //         else {
+        //             obj[cur] = cur;
+        //         }
+                
+        //     }
+        //     return ary
+        // }
+        // console.log(unique(ary)) // [6,3]
+
+        // function unique(ary){
+        //     let obj = {};
+        //     for(var i = 0;i<ary.legnth;i++){
+        //         obj[ary[i]] = ary[i];
+        //     }
+        //     let newAry = [];
+        //     for(var key in obj){
+        //         newAry.push(obj[key])
+        //     }
+        //     return newAry
+        // }
+        // unique(ary)
+
+
+
+        // 数组的排序
+        // let ary = [12,23,13,45,12,31,11];
+        // function bubble(){
+        //     for(var i = 0;i<ary.length-1;i++){
+        //         for(var j = 0;j<ary.length-i-1;i++){
+        //                 if(ary[j]>ary[j+1]){
+        //                     var temp = ary[j];
+        //                     ary[j] = ary[j+1];
+        //                     ary[j+1] = temp;
+        //                 }
+        //         }
+        //     }
+        //     return ary;
+        // }
+
+
+        /* 
+        1.先抓取一张牌放手里
+        2.在一次抓取桌子上的每一张牌，拿抓到的牌和手里的牌从右往左一次做比较，如果比发现比手里的牌大了，就直接插入到那张牌的后面，并且停止比较
+        3.如果你抓取的牌比你手里的牌都小，就直接放到最左边
+         */
+         function insert(ary){
+            let handAry = [];
+            handAry.push(ary[0]);
+            for(var i=1;i<ary.length;i++){
+                var cur =ary[i];// 代表抓取的每一张牌
+                for(var j = handAry.length-1;j>=0;j--){
+                    var item = handAry[j] // 代表手里的每一张牌
+                    if(cur>=item){
+                        handAry.splice(j+1,0,cur);
+                        break;
+                    }
+                    if(j === 0) {
+                        handAry.unshift(cur)
+                    }
+
+                }
+            }
+            return ary;
+         }
+         insert(ary);
+    </script>
+</body>
+</html>

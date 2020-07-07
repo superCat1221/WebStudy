@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        dom的方法
+        字符串的方法
+        queryUrlParams
+        数组的排序(插入排序)
+        Math中的方法
+        时间格式化
+
+        获取随机字符串
+
+         */
+         let url = 'http://www.baidu.com?word=自行车&name=erYa&age=18#index';
+
+         function queryUrlParams(url){
+            let ary = url.split('?') // ['http://www.baidu.com','word=自行车&name=erYa&age=18']
+            let str = ary[1];  // 'word=自行车&name=erYa&age=18#index'
+            let index = str.indexOf('#'); // 获取#的索引
+            let paramsStr = str.substring(0,index); // word=自行车&name=erYa&age=18
+            let hash = str.substring(index+1); // 获取hash值
+
+            let paramsAry = paramsStr.split('&'); // ['word=自行车','name=erYa','age=18']
+            let obj = {};
+            for(var i=0;i<paramsAry.length;i++){
+                var cur = paramsAry[i] // 代表数组的每一项   'word=自行车'
+                var item = cur.split('='); // ['word', '自行车']
+                obj[item[0]] = item[1];
+            }
+            obj['HASH'] = hash;
+
+            return obj
+         }
+
+         console.log(queryUrlParams(url))
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    //执行一次可以把所有匹配的结果捕获到
+    ~function(){
+        function execAll(str=''){
+
+            //第一件事：验证当前正则设置了g,不设置则不能进行循环捕获,否则会导致死循环
+            if(!this.global){
+                return this.exec(str);
+            }
+
+            //this:RegExp的实例（当前操作的正则）
+            let ary = [],
+                res =  this.exec(str);
+            while(res){
+                ary.push(res[0]);
+                res = this.exec(str);
+
+            }
+            return ary;
+
+        }
+        RegExp.prototype.execAll = execAll;
+    }();
+
+    let reg = /\d+/g;
+    let str = 'luban2020xiaokeai07sansui2020';
+    console.log(reg.execAll(str));
+    console.log('luban2020xiaokeai07sansui2020'.match(reg));//字符串的方法match，可以在执行一次的情况下，捕获到所有匹配的数据（前提正则设置g才可以）
+
+</script>
+</body>
+</html>

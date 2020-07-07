@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        函数的实参和形参
+         */
+         function sum(n,m){
+             // 函数定义的时候小括号里是形参
+             // 实参和形参是一一对应的
+             // 如果函数执行的时候实参不给形参赋值，那形参变量就是undefined
+             console.log(n,m)
+         }
+
+         // 函数执行的时候小括号里是实参
+        //  sum(10,12)
+        // sum(10) // 如果函数执行的时候，只穿一个参数，那接收时，第二个参数就是undefined
+        // sum(10,12,15) // 如果实参多传了，那就是穿不进去的
+        sum()
+    </script>
+</body>
+</html>

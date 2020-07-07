@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    var arr = [12,22,23,22,12,24,22,3,4];
+
+    // var arr = [1,1,2,3];
+    //            0 1 2 3
+               
+    //            [1,2,3]
+    //             0 1 2
+
+    // function unique(arr){
+    //     for(var i=0;i<arr.length;i++){
+    //         for(var j=i+1;j<arr.length;j++){
+    //             if(arr[i] == arr[j]){
+    //                 arr.splice(j,1);
+    //                // j--;
+    //             }
+    //         }
+    //     }
+    //     return arr;
+    // }
+
+    // console.log( unique(arr) );
+
+    function unique(arr){
+        var array = [];
+        for(var i =0;i<arr.length;i++){
+            if( array.indexOf(arr[i])  == -1 ){
+                array.push(arr[i]);
+            }
+        }
+        return array;
+    }
+    console.log( unique(arr) );
+
+</script>

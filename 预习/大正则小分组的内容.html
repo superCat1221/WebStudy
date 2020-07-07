@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let str = "{0}年{1}月{2}日";
+    let reg = /\{(\d+)}/g;
+    let aryBig = [],
+    arySmall = [],
+    res = reg.exec(str);
+    while(res){
+        let [big,small] = res;
+        aryBig.push(big);
+        arySmall.push(small);
+        res = reg.exec(str);
+    }
+console.log(aryBig,arySmall);//["{0}", "{1}", "{2}"]     ["0", "1", "2"]
+</script>
+</body>
+</html>

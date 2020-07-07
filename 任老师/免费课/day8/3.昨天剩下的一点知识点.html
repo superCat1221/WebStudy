@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="a b c d">
+        <span>1111</span>
+    </div>
+
+    <script>
+        // cloneNode():克隆节点，如果传传参是true，深克隆，如果不穿或者传false，就是浅克隆
+        // replaceNode(n,m):替换节点
+
+        // let box = document.getElementById('box');
+
+        // let clone1 = box.cloneNode(true)
+        // console.log(clone1)
+
+
+        //----------------------------
+        let box = document.getElementById('box');
+
+        box.ss=100; // 这个属性存储到当前元素的堆内存中了
+        console.dir(box)
+
+        // setAttribute(属性名,属性值)：给当前元素的结构增加自定义属性(增加到元素行内)
+        // getAttriubute(属性名)：获取元素结构上的属性
+        // removeAttribute(属性名)：移除行间属性
+        // box.setAttribute('ss',200)
+        // console.log(box.getAttribute('ss'))
+        // box.removeAttribute('ss')
+
+        // box.flag = 100;
+        // console.log(box.getAttribute('flag'))
+
+        // 用点的方式和attr方式没有任何联系
+        // 如果你用点的方式去新增的，但是用getAttr的方式是获取不到的
+        // 用什么样的方式去设置就用什么样的方式去获取
+
+        // classList：类名的列表
+        // box.className = 's' // 覆盖
+        console.log(box.classList)
+        // box.classList.add('ss')
+        // box.classList.remove('a')
+        // box.classList.replace(n,m):替换class名(n被m替换)
+
+
+    </script>
+</body>
+</html>

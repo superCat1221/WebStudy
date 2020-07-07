@@ -1,0 +1,94 @@
+[
+    {
+        "id":1,
+        "title":"HUAWEI Mate10 4GB+64GB 全网通",
+        "price":3899,
+        "time":"2019-03-15",
+        "hot":198,
+        "img":"img/1.png"
+    },
+    {
+        "id":2,
+        "title":"HUAWEI 麦芒 4GB+64GB 全网通",
+        "price":2399,
+        "time":"2018-09-15",
+        "hot":1980,
+        "img":"img/2.png"
+    },
+    {
+        "id":3,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":10000,
+        "time":"2017-03-15",
+        "hot":190000,
+        "img":"img/1.png"
+    },
+    {
+        "id":3,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":10000,
+        "time":"2016-03-15",
+        "hot":1900008,
+        "img":"img/1.png"
+    },
+    {
+        "id":4,
+        "title":"HUAWEI P40Pro 4GB+64GB 全网通",
+        "price":50000,
+        "time":"2015-03-15",
+        "hot":200,
+        "img":"img/2.png"
+    },
+    {
+        "id":5,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":1000,
+        "time":"2020-03-15",
+        "hot":10000,
+        "img":"img/1.png"
+    }
+    ,
+    {
+        "id":6,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":50000,
+        "time":"2021-03-15",
+        "hot":1900,
+        "img":"img/1.png"
+    }
+    ,
+    {
+        "id":7,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":20000,
+        "time":"2022-03-15",
+        "hot":19,
+        "img":"img/1.png"
+    },
+    {
+        "id":8,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":4000,
+        "time":"2015-03-15",
+        "hot":19800,
+        "img":"img/1.png"
+    }
+    ,
+    {
+        "id":9,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":9000,
+        "time":"2090-03-15",
+        "hot":1980,
+        "img":"img/1.png"
+    }
+    ,
+    {
+        "id":10,
+        "title":"HUAWEI Mate20 4GB+64GB 全网通",
+        "price":800,
+        "time":"1996-03-15",
+        "hot":200,
+        "img":"img/1.png"
+    }
+]

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        函数的arguments
+        argeuments他是函数里边独有的，只能在函数里用
+
+         */
+        // function sum (n,m,x){
+        //     return n+m+x
+        // }
+        // // console.log(sum(1,2,3))
+        // console.log(sum(1,2,3,4))
+
+    //     function sum (){
+    //         console.log(arguments)
+    //         // 利用for循环实现求和，最后把和return出去
+    //         let total = 0;
+    //         for(var i = 0;i<arguments.length;i++){
+    //             // total+=arguments[i]
+    //             // var cur = arguments[i]; // 代表arguments的每一项
+    //             // total+=cur
+    //         }
+    //         return total
+
+    //         // arguments就是一个实参集合，他是一个类数组，可以拿到每一个实参
+    //     }
+      
+    //     // console.log(sum(1,9,3,4,10,2))
+
+    //-------------
+
+
+
+    function sum (){
+        // arguments.__proto__ = Array.prototype;
+        // arguments.forEach(item => {
+        //         console.log(item)
+        // });;
+            let total = 0; // 创建一个累加初始的值
+            for(var i = 0;i<arguments.length;i++){
+                var cur = Number(arguments[i]); // 把arguments的每一项转数字
+                // 判断当前的cur是不是一个有效数字，如果是有效数字，在让他参与求和
+                if(!isNaN(cur)){
+                    // 如果当前cur可以转成有效数字，那在求和
+                  total+=cur  
+                }
+                
+            }
+            return total
+        }
+      
+        // console.log(sum(1,9,3,4,10,2))
+
+        // 实现任意数据类型的求和
+        // 如果当前数据类型转数字是有效数字就让他参与求和，如果不是，就不让他参与求和
+      console.log(sum(1,true,NaN,undefined,null));
+
+    //   function fn(){
+    //       if(1) return true
+          
+    //   }
+    </script>
+</body>
+</html>

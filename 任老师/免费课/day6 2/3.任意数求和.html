@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        任意数求和
+        // 1.求多少位的和都可以
+        // 2.可以传递任意数据类型
+         */
+        function sum() {
+            // arguments // 实参集合，他是一个类数组，每一个实参都在里边
+            // 累加求和，在求和的时候判断一个当前数据类型转数字是不是非有效数字
+            let total = null;
+            for (var i = 0; i < arguments.length; i++) {
+                var cur = Number(arguments[i]);
+                if (!isNaN(cur)) {
+                    total+=cur;
+                }
+            }
+            return total;
+        }
+
+        let total = sum(1, true, '10', NaN, undefined, num);
+        console.log(total)
+
+    </script>
+</body>
+
+</html>

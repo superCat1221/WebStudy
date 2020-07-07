@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function numSum(){
+        var sum = 0;
+        for(var i =0;i<arguments.length;i++){
+            var cur = Number( arguments[i] );
+
+            if( !isNaN(cur) ){
+                sum += cur;
+            }
+
+        }
+        return sum;
+    }
+    
+
+    console.log(numSum(1,2,3,true));
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="box">
+       <li>1</li>
+       <li id="two">2</li>
+       <li id="three">3</li>
+       <!--  -->
+    </ul>
+    <script>
+        // 页面的所有东西都是节点组成的
+        // 元素知识节点的一种，叫做元素节点
+        // 所有的节点都是对象数据类型的
+
+        /* 
+        节点名称                           nodeType      nodeName      nodeValue
+
+        元素节点  标签                         1         大写的标签名      null
+        文本节点  内容、空格、回车(换行)         3         '#text'          内容
+        注释节点  注释                         8         '#comment'        内容
+        文档节点  document                     9          '#document'      null
+
+         */
+        
+
+        // 节点之间的关系属性
+            // 1.childNodes：获取所有的子节点
+            // 2.children:获取所有的元素子节点(在IE6-IE8不兼容)
+            // 3.firstChild：获取第一个子节点
+            // 4.lastChild：获取最后一个子节点
+            // 5.firstElementChild：获取第一个元素子节点(在IE6-IE8不兼容)
+            // 6.lastElementChild:获取最后一个元素子节点(在IE6-IE8不兼容)
+            // 7.previousSibling:获取上一个哥哥节点
+            // 8.previousElementSibling:获取上一个哥哥元素节点(在IE6-IE8不兼容)
+
+            // 9.nextSibling：获取下一个兄弟节点
+            // 10.nextElementSibling：获取下一个元素兄弟节点(在IE6-IE8不兼容)
+
+            // 11.parentNode：获取父亲节点
+
+
+
+
+
+            let box = document.getElementById('box');
+            let three = document.getElementById('three');
+            // console.log(box.childNodes) // 节点集合[]
+            // console.log(box.children)
+            // console.log(box.firstChild)
+            // console.log(box.lastChild)
+            // console.log(box.firstElementChild)
+            // console.log(box.lastElementChild)
+            // console.log(three.previousSibling)
+            // console.log(three.previousElementSibling)
+            console.log(three.parentNode.parentNode.parentNode.parentNode.parentNode)
+            //                      ul-->body-->html-->document-->null
+            // 如果获取单个的元素获取不到就是null
+    </script>
+</body>
+
+</html>

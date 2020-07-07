@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        数组去重：
+
+         */
+        //  let ary = [23,23,23,34,23,34,23];
+         // 利用对象的属性名不能重复的特点进行去重
+        //  let obj = {
+        //      name:'11',
+        //      age:18,
+        //      name:'19'
+        //  }
+        //  console.log(obj)
+    //     function unique(ary){
+    //         // 创建一个对象，用来接受新的键值对
+    //         let obj = {};
+    //         for(var i = 0;i<ary.length;i++){
+    //             // 把数组的每一项既当做属性名又当做属性值存储到对象中
+    //             let cur = ary[i] // 代表数组的每一项
+    //             obj[cur] = cur;
+    //             // obj[23] = 23
+    //             // obj[23] = 23
+    //         }
+    //         // console.log(obj) // {23:23,34:34}
+
+    //         // 创建一个新的数组，
+    //         // 遍历对象(for in)，把每一个对象的属性值push到新数组中
+    //         let newAry = [];
+    //         for(var key in obj){
+    //                 // console.log(obj[key])
+    //                 newAry.push(obj[key])
+    //         }
+    //         return newAry;
+    //     }
+    //    console.log(unique(ary)) 
+       // 原有数组不会发生改变
+    //------------------------------------------------
+    let ary = [23,23,23,45,34,23,23]; // af0
+    //       删除23之后45的索引是1
+    // 利用对象的属性名如果已经存在，那就不是undefined的特点进行去重
+        function unique(ary){ // af0
+            // 创建一个新的对象，把数组里的每一项既当做属性名又当做属性值存储到对象中
+            let obj ={}; // {23:23}
+            for(var i = 0;i<ary.length;i++){
+                // ary[i] // 代表数组的每一项
+                if(obj[ary[i]] !== undefined){
+                    // obj[23]
+                    // 如果属性名在对象重复了，那也就是说这一项在数组中是重复的
+                    // 把数组里的那一项删除就好了
+                    // i == 1
+                    // ary.splice(i,1); // 删除重复的那一项
+                    ary[i] = ary[ary.length-1]; // 把数组当前重复项用数组的最后一项进行覆盖
+                    ary.length--; // 把数组最后一项进行删除
+                    i--; // 为了防止数组的塌陷
+                }
+                else {
+                    // 给obj新增键值对
+                   obj[ary[i]] = ary[i]; 
+                }
+                
+            }
+            return ary
+        }
+
+        console.log(unique(ary)) // af0
+        // 可以改变原数组
+
+
+        let s = 'name';
+        let obj = {
+            name:1,
+            age:2,
+        }
+        obj.name
+        obj[s] = 100
+    </script>
+</body>
+</html>

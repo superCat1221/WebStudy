@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+let a = {
+    n:1
+}
+let b = a;
+a = a.x  = {
+    n:2
+};
+console.log(a.x);
+console.log(b)
+
+
+// let a = {n:1};
+// a = a.x = {m:1};
+// console.log(a);
+// console.log(a.x);
+
+
+// let a = {n:1};
+// a.x = a = {m:1};
+// console.log(a);
+// console.log(a.x);
+                 
+
+// var arr1 = [3,4]   //数组是引用数据类型
+// var arr2 = arr1    //arr2的地址指向arr1的地址 arr2[0]=3,arr2[1]=4
+// arr2[0]=1;         //arr2[0] 取数组arr2中的第一项 等于此时是 基本数据类型赋值 所以 arr2[0]等1同时 arr1也该百改变为1
+// arr2 = [4,5]       //arr2 开辟了一个新的内存 arr2[0]= 4 arr2[1]=5
+// arr2[1]=2          //arr2[1]=2 arr2[0]=4
+// arr1[1]=0          //arr1[0]=1 arr1[1]=0
+// console.log(arr1,arr2)
+
+
+</script>

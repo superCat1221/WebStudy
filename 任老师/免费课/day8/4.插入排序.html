@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.先抓一张牌放到手里
+        // 2.继续抓取桌上的每一张牌和手里的牌从右往右依
+        // 次做比较，如果抓的牌比手里的牌大了，就直接放到那
+        // 张牌的后面，并且停止比较
+        // 3.如果抓的牌比你手里的都小，直接放到做左边
+
+        let ary = [12, 23, 12, 45, 21, 12, 11, 55, 2];
+        function insert(ary) {
+            let handAry = []; // 代表咱们的手里的牌
+
+            // 1.先抓取第一张牌放到手里
+            handAry.push(ary[0]);
+
+            // 此次循环就是模拟抓取每一张牌
+            for (var i = 1; i < ary.length; i++) {
+                var gradCard = ary[i]; // 代表抓取的每一张牌
+
+                // 此循环是吧当前抓到的牌和手里的从右往左一次做比较
+                for (var j = handAry.length - 1; j >= 0; j--) {
+                    var next = handAry[j]; // 代表你手里的每一张牌
+                    if (gradCard >= next) {
+                        // 如果你当前抓的牌比你手里的牌大了，就直接放到这张牌的后面
+                        handAry.splice(j + 1, 0, gradCard);
+                        break;
+                    }
+                    if (j === 0) {
+                        // 如果j的值是0，说明你现在抓取的牌比你手里的牌都小
+                        handAry.unshift(gradCard);
+                    }
+                }
+
+            }
+            return handAry
+        }
+        console.log(insert(ary))
+
+
+        // let s = [1, 2, 3, 4, 5];
+        // for (var i = 4; i >= 0; i--) {
+        //     console.log(s[i])
+        // }
+
+        let s = [1,2,3,4,5];
+
+        // 抓取的牌是3
+        s.splice(1,0,3)
+
+    </script>
+</body>
+
+</html>

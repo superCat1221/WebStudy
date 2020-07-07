@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #code{
+            width: 200px;
+            height: 30px;
+            /* background: red; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #code span{
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            border:1px solid black;
+            margin-left: 5px;
+            text-align: center;
+        }
+        #code p{
+            width: 150px;
+            height: 20px;
+            border:1px solid black;
+            display: inline-block;
+            text-align: center;
+        }
+        input{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="code">
+        <p>1111</p>
+        <span>看不清</span>
+    </div>
+    <input type="text"/>
+</body>
+</html>
+<script>
+
+    var validCode = document.querySelector('#code p');
+    var noSee = document.querySelector('#code span');
+    var enterCode = document.querySelector(' input');
+    createCode();
+
+    noSee.onclick = function(){
+        createCode();
+    }
+
+    enterCode.onblur = function(){
+        
+        var showValue = validCode.innerHTML.toLowerCase();
+        var inputValue = enterCode.value.toLowerCase();
+
+        if(showValue == inputValue){
+            alert('ok');
+            enterCode.value = '';
+        }else{
+            alert('no');
+            enterCode.value = '';
+        }
+       
+    }
+
+    function createCode(){
+        var str = 'asdfghjklASDFGHJKL1234567890';
+        var randomCode ='';
+        for(var i=0;i<4;i++){
+           // Math.round(Math.random*(m-n)+n)
+            var index = Math.round( Math.random()*( str.length-1)  );
+            var item = str[index];
+            randomCode += item;
+            validCode.innerHTML = randomCode;
+        }
+    }
+
+
+</script>

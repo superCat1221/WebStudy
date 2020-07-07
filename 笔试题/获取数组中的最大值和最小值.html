@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let ary = [12,34,24,10,2,-4];
+    /*
+    方案一：先排序，第一项和最后一项就是我们要的
+        ary.sort( function(a,b){
+            return a-b;
+        } );
+        let min = ary[0];
+        let max = ary.reverse()[0];
+        console.log(min,max);
+    */
+
+    /*
+    方案二：Math.min / Math.max 要求我们传递的数据是一项项传递的，不能是数组
+        let min = Math.min(...ary);
+        let max = Math.max(...ary);
+        console.log(min,max);
+    */
+
+
+    /*
+    方案二：Math.min / Math.max 要求我们传递的数据是一项项传递的，不能是数组
+        1.基于ES6的展开运算符
+            let min = Math.min(...ary);
+            let max = Math.max(...ary);
+            console.log(min,max);
+        2.利用apply来实现
+            let min = Math.min.apply( Math,ary );
+            let max = Math.max.apply( Math,ary );
+            console.log(min,max);
+    */
+
+
+    /*
+    方案三：假设法（假设第一个是最大的，让数组中的每一项分别和当前假设的值比较，如果比假设值大，则把最大的值设为新的假设值，继续向后比较）
+    let max = ary[0];
+    for(let i=1;i<ary.length;i++){
+        let item = ary[i];
+        if( item > max ){
+            max = item;
+        }
+    }
+    console.log(max);
+        
+    */
+
+    
+</script>

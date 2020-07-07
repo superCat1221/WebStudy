@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 800px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin: 50px auto;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            background: -webkit-linear-gradient(top right, rgba(255, 0, 0, 0.281), rgba(0, 128, 0, 0.274), rgba(255, 255, 0, 0.178));
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+    
+        var box = document.getElementById('box');
+
+        function addZero(val){
+            // if(val < 10){
+            //     return '0' + val;
+            // }else{
+            //     return val;
+            // };
+
+            return val < 10 ? '0' + val : val;
+        }
+
+        function teansDay(day){
+            let obj = {
+                0:'星期日',
+                1:'星期一',
+                2:'星期二',
+                3:'星期三',
+                4:'星期四',
+                5:'星期五',
+                6:'星期六',
+            };
+            return obj[day];
+        }
+
+        function createTime(){
+            let time = new Date(),
+                year = time.getFullYear(),
+                month = time.getMonth()+1,
+                data = time.getDate(),
+                day = time.getDay(),
+                hour = time.getHours(),
+                min = time.getMinutes(),
+                sec = time.getSeconds();
+
+            let res = year + '年' + addZero(month) + '月' + addZero(data) + '日'  + addZero(hour) + '时' + addZero(min) + '分' + addZero(sec) + '秒' + teansDay(day);
+
+            box.innerHTML = res;
+
+        }
+        createTime();
+        setInterval(createTime,1000);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        push、unshift、pop、shift、splice、reverse、sort可以改变原数组
+        slice、concat、join、indexOf、lastIndexOf、includes
+         */
+
+        //  forEach：
+        //     含义：遍历数组
+        //     参数：传一个函数
+        //     返回值：undefined
+        //     原数组不发生变化
+
+        //     let ary = [34,12,43,11,23];
+        //     // for(var i = 0;i<ary.length;i++){
+        //     //     console.log(ary[i])
+        //     // }
+        //    let res =  ary.forEach(function(item,index){
+        //         // 数组有多少项，那这个函数就会执行多少次
+        //         // item代表数组的每一项
+        //         // index代表每一项的索引
+        //         console.log(item,index)
+        //     })
+        //     console.log(res)
+
+            // function sum(...arg){
+            //     // ...是es6的新语法，他叫拓展收缩运算符
+            //     console.log(arg) // [true,1,false,NaN]
+            //     // arguments
+            //     let total = null;
+            //     arg.forEach(function(item,index){
+            //         let num = Number(item);
+            //         if(!isNaN(num)){
+            //             total+=num
+            //         }
+            //     })
+            //     return total
+           // }
+            //console.log(sum(true,1,false,NaN));
+            //console.log(...[,2,3])1
+
+        // map:
+        // 含义：映射数组
+        // 传参：传一个函数
+        // 返回值：是一个数组，数组里是改变之后的内容
+        // 原数组不变
+
+       let ary = [34, 45, 23, 12, 55];
+       let res =  ary.map(function(item,index){
+            console.log(item,index)
+            // return item
+        })
+        console.log(res)
+        //[]
+    </script>
+</body>
+
+</html>

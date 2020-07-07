@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [2,3,4,5,6];
+    /*
+        ...x:扩展运算符，把剩下的内容存储到x中，但是它只能出现在最后
+    */
+    let [n,m,...x] = arr;
+    console.log(n,m,x);//2 3   [4, 5, 6]
+
+    let [n,,m] = arr;
+    console.log(n,m); //2 4
+
+    let [n,,m,,,,,,,x]=arr;
+    console.log(n,m,x); //2 4 undefined
+
+    let [n,,m,,,,,,,x=0 ]=arr;
+    console.log(n,m,x); //2 4 0
+
+    let arr = [10,[20,30,[40,50]]];
+    let [n,[,,[,m]]] = arr;
+    console.log(n,m); //10 50
+
+</script>

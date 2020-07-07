@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 500px;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+
+        ul li {
+            line-height: 30px;
+            font-size: 20px;
+            text-align: center;
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="ul">
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+        </ul>
+        <li>1111</li>
+    </div>
+    <script>
+        // 每一个li都增加背景颜色
+        // 每一个li鼠标划上之后改变颜色，划出之后恢复之前的颜色
+
+        // 1.想操作谁就获取谁
+        let box = document.getElementById('ul'); // 直接获取的元素
+        let list = box.getElementsByTagName('li') // 获取的是一个元素集合 是一个类数组 如果获取不到也是一个空的类数组集合 []
+      
+      // 我想获取ul元素，通过tagName获取
+        // let ss = document.getElementsByTagName('ul');
+        // console.log(ss[0]) // 是ul元素吗 [ul]
+    
+    // 2.给每一个li添加背景颜色
+   for(var i = 0;i<list.length;i++){
+    //    list[i] // 代表每一个li
+    if(i%2 === 0){
+        list[i].style.background = 'black'
+    }
+    else {
+        list[i].style.background = 'orange'
+    }
+    // list[i].color = list[i].style.background;
+    list[i].onmouseover = function(){
+        // this // 你当前操作的是谁，this就是谁
+        // console.log(this)
+        // 在鼠标划入之后，改变背景颜色之前，就得把之前的背景颜色保存下来
+
+        // 因为元素是对象数据类型的，所以咱们可以把元素之前的北京颜色保存到自己身上，以键值对的形式
+        this.color = this.style.background;
+        this.style.background = 'pink';
+
+    }
+    list[i].onmouseout = function(){
+        // 鼠标划出，恢复之前的背景颜色
+        this.style.background = this.color
+    }
+   }
+    </script>
+</body>
+
+</html>

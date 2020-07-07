@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: orangered;
+            display: none;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        我们是广告
+        <button id="btn">关闭广告</button>
+    </div>
+    
+    <script>
+        /* 
+        设置一个时间，到了规定的时间去做什么事
+        设置定时器有两种形式 setTimeout  setInterval
+        setTimeout：一次性的定时器，只能执行一次
+        setInterval：可以执行多次，是周期性的定时器，每到规定的时间就会执行一次
+
+        // 定时器的第一个参数是一个函数，第二个参数是时间，以毫秒为单位
+
+        // 定时器的返回值是数字，而且这个数字代表了当前定时器在页面中的个数(位置)
+
+        clearInterval(定时器的返回值)和clearTimeout(定时器的返回值)：清楚定时器
+         */
+
+        //  setTimeout(fn,time)
+        // console.log(1);
+        // setTimeout(function(){console.log(2)},5000);
+        // console.log(3);
+        // setInterval(function(){console.log(1)},2000);
+
+        // let timer1 = setTimeout(function(){console.log(1)},0);
+        // let timer2 = setTimeout(function(){console.log(2)},0);
+        // let timer3 = setTimeout(function(){console.log(2)},0);
+        // console.log(timer1,timer2,timer3); // 定时器的返回值是数字，而且这个数字代表了当前定时器在页面中的个数(位置)
+
+    //    let timer = setInterval(function(){console.log(1)},1000)
+    // let timer = setTimeout(function(){console.log(1)},3000);
+       
+
+    //     btn.onclick = function(){
+    //         clearInterval(timer);
+    //     }
+
+        setTimeout(function(){
+            box.style.display = 'block'
+        },10000)
+            btn.onclick = function(){
+                box.style.display = 'none'
+        }
+    </script>
+</body>
+</html>

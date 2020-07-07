@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数组：就是一个特殊的对象
+        他呢外层是一个中括号，中括号里边是每一个属性值，而且那逗号隔开，属性名是自动生成的，从0开始，一次递增，可以代表每一项的位置，也叫作索引，
+        每一个数组天生自带一个length属性，可以代表数组的长度，而且lenght的长短可以控制数组的内容的有无
+         */
+        //  let ary  = [1,2,3]; // aaafff000
+        // //  console.log(ary)
+        //  // 咱们接下来要学的数组的方法的只有数组可以去调用，
+        // //  ary.push('999');
+        // // ary[ary.length] = '999'
+        // //  console.log(ary)
+        // function fn(s){ // af0
+        //     s[3] = 100;
+        //     console.log(s) // [1,2,3,100]
+        // }
+        // fn(ary); // af0
+        // console.log(ary); // [1,2,3,100]
+        // 引用值存储的空间地址(路径)
+        //----------------------------------------------
+        // let ary = [1, 2, 3, 4, 5];
+        // - 1、push：
+        // + 含义：给数组末尾增加内容
+        // + 可以传多个
+        // + 数组新的长度
+        // + 原数组发生变化
+        // let ary = [1,2,3,4,5];
+        // console.log(ary.push(33,44,true)) //8
+        // console.log(ary) // [1,2,3,4,5,33,44,true]
+
+        // - 2、unshfit
+        //     + 给数组开头增加内容
+        //     + 传多个参数
+        //     + 数组新的长度
+        //     + 原数组发生变化
+        // console.log(ary.unshift(12,33,35)) // 8
+        // console.log(ary) // [12, 33, 35, 1, 2, 3, 4, 5]
+        // // ary[-1] = 100;
+        // // ary[0] = 100; // 这叫修改不叫新增
+        // // console.log(ary) // 
+
+        // - 3、pop
+        //     + 含义：删除数组末尾最后一项
+        //     + 参数：无
+        //     + 删除的那一项
+        //     + 原数组发生变化
+
+        // console.log(ary.pop()) // 5
+        // console.log(ary)  // [1,2,3,4]
+        // ary.length--; // 就是length累减1
+        // console.log(ary)
+
+        // delete ary[0] // 不要这么删除数组的第一项
+
+        // console.log(ary)
+
+        // - 4、shift
+        // + 含义：删除数组开头一项
+        // + 传参：无
+        // + 返回值：删除的那一项
+        // + 原数组发生变化
+        // console.log(ary.shift()) // 1
+        // console.log(ary) // [2,3,4,5]
+
+        // - 5、splice
+        //     + 数组的增删改
+        //     + 不固定
+        //     + 返回值：是一个新的数组，数组里的内容就是你删除的内容
+        //     + 原数组发生变化
+        // let ary = [1, 2, 3, 4, 5];
+        // 传一个参数：n，从索引n开始，删除到末尾
+        // console.log(ary.splice(2)); // [3,4,5]
+        // ary.splice(0) // 清空数组
+        // console.log(ary.splice()) // 如果不传参，那一个也不删
+        // console.log(ary) // [1,2]
+
+        // ary.splice(ary.length-1) // 删除数组最后一项
+        // ary.pop()
+        // ary.length--;
+
+        // 传两个参n,m:从索引n开始，删除m个
+        // console.log(ary.splice(2,1)); // [3]
+
+        // ary.splice(0,1) //删除数组开头一项
+        // ary.shift()
+
+        // console.log(ary); // [1,2,4,5]
+
+        // 传三个参数n,m,x:从索引n开始，删除m个，用x进行替换   修改
+        // console.log(ary.splice(1,2,true)) // [2,3]
+        // console.log(ary) // [1,true,4,5]
+        // ary[2] = 600;
+
+        // n,0,x:从索引n开始，删除0个，把x放到n对应的值的前面
+        // console.log(ary.splice(0,0,true)) // 向数组开头新增
+        // 向数组末尾新增一项
+        // ary.splice(ary.length,0,true) // []
+        // ary[ary.length] = xxx
+        // console.log(ary)
+
+
+        // - 6、slice
+        //     + 含义：数组的截取
+        //     + 参数：不固定
+        //     + 返回值：是截取之后的新数组
+        //     + 原数组不发生变化
+
+        // let ary = [23,34,56,78,89];
+        // 传一个参数n：从索引n开始截取到末尾
+        // console.log(ary.slice(2)) // [56,78,89]
+        // console.log(ary) // [23,34,56,78,89];
+
+        // 传递两个参数n,m:从索引n开始，截取到索引m(而且不包含m对应的那一项)
+        // console.log(ary.slice(2,4)) // [56,78]
+        // console.log(ary.slice(2,100)) // [56,78,89]
+        // console.log(ary) // [23,34,56,78,89];
+
+        // 不穿参数
+        // console.log(ary.slice()) // 如果不传参就是截取全部，也叫作克隆[23,34,56,78,89];
+        // console.log(ary.slice(0)) // 如果不传参就是截取全部，也叫作克隆[23,34,56,78,89];
+
+        // 传递的参数支持负数
+
+
+        // - 7、concat:
+        //     + 含义：数组的拼接
+        //     + 参数：不固定
+        //     + 返回值：是拼接之后的新数组
+        //     + 不发生变化
+        // let ary = [34,67,12,45];
+        // console.log(ary.concat([2,3])) // [34,67,12,45,2,3];
+        // console.log(ary.concat(1))// [34,67,12,45,1];
+        // console.log(ary) // [34,67,12,45];
+        //----------------------------------------------------------------------
+        // ary.push([1,2])
+        // console.log(ary) // [34,67,12,45,[1,2]]
+
+
+
+
+        // - 8、join
+        //     + 含义：把数组以特定的分隔符转化为字符串
+        //     + 参数：分隔符
+        //     + 转换之后的字符串
+        //     + 不发生变化
+
+        // let ary = [34,67,12,45];
+        // console.log(ary.join('&')) // '34$67$12$45'
+        // console.log(ary.join('+')) // '34+67+12+45'
+        // console.log(ary.join()) // 如果不传参，那分隔符就是逗号
+        // console.log(ary)
+        // // eval:把字符串转化成真正的js表达式
+        // // console.log(eval('34+67+12+45')) // 158
+        // console.log(eval(ary.join('+'))) // 158
+
+
+        // function fn(){
+        //     console.log(100)
+        // }
+        // eval('fn()') // 让 'fn()'转化为真正的js代码进行执行
+
+
+        // - 9、reverse：
+        //     + 数组的倒叙
+        //     + 无
+        //     + 返回值：倒叙之后的数组
+        //     + 改变原数组
+        // let ary = [1,2,3,4,5];
+        // console.log(ary.reverse()); // [5, 4, 3, 2, 1]
+        // console.log(ary); // [5, 4, 3, 2, 1]
+        //--------------------------------------------------------
+        // + 含义：数组的排序
+        //     + 参数：无或者是函数
+        //     + 返回值：排序之后的数组
+        //     + 改变原数组
+
+        // let ary  =[2,3,7,6,1,4];
+        // let ary = [7,111,22,11,9]
+        // console.log(ary.sort()); // [1, 2, 3, 4, 6, 7] // 不能够给多位数进行排序
+        // console.log(ary)
+
+        // 给sort传递一个函数，就可以给多位数排序了
+        //     let ary = [7,111,22,11,9];
+        //    console.log(ary.sort(function(a,b){
+        //         // 如果是从小到大排序就return a-b (升序)
+        //         // 如果想从大到小排序，那就return b-a (降序)
+        //         return a-b
+        //     })) 
+
+        //----------------------
+        // 11、indexOf:检测某个值在数组中第一次出现的位置
+        // let ary = [1,2,3,4,3,1,2,3,1,2];
+        // console.log(ary.indexOf(3)) // 2 (第一次出现的位置的索引)
+        // // 如果检测的值在数组里没有，那就返回-1
+        // console.log(ary.indexOf(100)) // -1
+
+        // // 传两个参n,m:n表示被检测的值，m是检测开始的位置
+        // console.log(ary.indexOf(3,3)) // 4 
+        // console.log(ary.indexOf(3,8)) // -1
+
+
+        // 12、 lastIndexOf
+        // let ary = [1, 2, 3, 4, 3, 1, 2, 3, 1, 2];
+        // console.log(ary.lastIndexOf(2)) // 9
+        // // 如果传递两个参数n,m:n是被检测的值，m就是检测结束的位置
+        // console.log(ary.lastIndexOf(2,7)) // 6
+
+
+        // - 13、includes：
+        // + 检测当前值在数组中有没有
+        // + 参数：被检测的值
+        // + 返回值：如果存在就是true，否则就是false
+        // + 原数组不发生变化
+        // let ary = [1, 2, 3, 4, 3, 1, 2, 3, 1, 2];
+        // console.log(ary.includes(400)) // false
+        // console.log(ary.includes(4)) // true
+
+        // 数组的去重 去除数组的重复项
+
+
+
+    </script>
+</body>
+
+</html>

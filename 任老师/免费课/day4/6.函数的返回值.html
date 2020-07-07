@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let box = document.getElementById('box');
+        // console.log(box)
+        /* 
+        函数的返回值：return
+        1、可以把函数的执行结果return出去
+        2、可以阻断代码向下运行
+         */
+        // 小明用榨汁机去榨汁，炸完之后，首先把果汁倒出来，给小明喝
+
+        function sum(n, m) {
+            let total = n + m;
+            total = total / 2;
+
+            return total;
+            // 函数的返回值，想返回啥，return后面就跟啥，
+            // 谁执行的函数，那return的值就给谁
+            // 如果函数没有返回值，那函数的执行结果就是undefined
+        }
+
+        //  console.log(sum(10,12));
+        // let ss = sum(10,12);
+        //  console.log(ss)
+        //  console.log(total);// 报错，因为函数里的东西在外界拿不到
+
+        /* 
+        出现undefined的情况
+        1、获取对象里属性名所对应的属性值获取不到，就是undefined
+        2、在函数执行的时候，实参不给形参赋值，那形参的值就是undefined
+        3、函数执行时没有return，那函数的执行结果就是undefined
+        4、声明一个变量，但是不给他赋值，那他的值就是undefined
+
+        出现null的集中情况
+        1、创建一个变量，可以手动给他赋值为null
+        2、通过id名获取元素，获取不到，那结果是null
+         */
+        //  var x;
+        //  console.log(x)
+
+        // function fn(){
+        //     console.log(11); // 11
+        //     return 22;
+        //     // return下面的代码不在执行
+        //     console.log(33);
+        // }
+
+        // console.log(fn()) // 
+
+        // for(var i=0;i<3;i++){
+        //     break; // 结束整个循环
+        //     console.log(i)
+        // }
+        // console.log(666)
+
+        // let w = 100;
+
+        // function fn() {
+        //     let num = w;
+        //     console.log(num); // 100
+        //     let ss = 600;
+        // }
+
+        // console.log(fn()); // un
+        // console.log(ss); // ss is not definde
+        // 在函数执行的时候，函数里边可以获取到外边的东西，但是函数在外边获取不到函数里边的东西
+
+        let num = 12;
+        function fn(num){
+            num++;
+            return num++;
+            --num;
+        }
+        let f = fn(10);
+        console.log(f);
+        console.log(num);
+        // 11 12
+        // 12 12
+        // 11 12
+
+
+    </script>
+</body>
+
+</html>

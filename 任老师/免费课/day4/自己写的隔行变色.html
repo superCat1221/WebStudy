@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+        list-style: none;
+        width: 500px;
+        margin: 20px auto;
+        text-align: center;
+        }
+        ul li {
+            line-height: 30px;
+            font-size: 20px;
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>佟湘玉</li>
+            <li>白展堂</li>
+            <li>吕轻侯</li>
+            <li>李秀莲</li>
+            <li>郭芙蓉</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+
+    var ul = document.getElementById('ul');
+    var lis = ul.getElementsByTagName('li');
+
+    for(var i=0;i<lis.length;i++){
+        if( i%2 == 0){
+            lis[i].style.backgroundColor = 'pink';
+        }else{
+            lis[i].style.backgroundColor = 'green';
+        }
+
+        var oldColor = null;
+
+        lis[i].onmouseover = function(){
+      
+            oldColor = this.style.backgroundColor;
+            //console.log(oldColor);
+            
+            this.style.backgroundColor = 'blue';
+
+        }
+
+        lis[i].onmouseout = function(){
+
+            this.style.backgroundColor = oldColor;
+            console.log(oldColor)
+        }
+    }
+
+
+
+
+</script>
+

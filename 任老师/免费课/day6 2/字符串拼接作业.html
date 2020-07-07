@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <p>我是第一行</p>
+    </div>
+    <input type="text"/>
+    <input type="button" value="确定"/>
+</body>
+</html>
+<script>
+
+    var content = document.querySelector('#content');
+    console.log(content)
+    var valToEnter = document.getElementsByTagName('input')[0];
+    var btn = document.getElementsByTagName('input')[1];
+
+    btn.onclick = function(){
+
+        var enterVal = valToEnter.value;
+        
+        content.innerHTML += '<p>'+ enterVal +'</p>';
+
+        valToEnter.value = '';
+
+    }
+
+</script>

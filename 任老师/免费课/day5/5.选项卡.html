@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 200px auto;
+            text-align: center;
+            /* border:1px solid black */
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #box div {
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            border: 1px solid black;
+            display: none;
+        }
+
+        ul li.active {
+            background: orangered;
+        }
+
+        #box div.active {
+            display: block;
+            background: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="ul">
+            <li>郭芙蓉</li>
+            <li>吕轻侯</li>
+            <li class="active">邢育森</li>
+        </ul>
+        <div>他是一个郭巨侠</div>
+        <div>他是一个算账的秀才</div>
+        <div class="active">他是当差的邢捕头</div>
+    </div>
+    <script>
+        // 选项卡的实现原理：就是通过点击li，从而切换li和div的class名的有无
+        // 1.想操作谁就获取谁
+        let navList = document.getElementsByTagName('li'); // 获取当前三个li
+        let box = document.getElementById('box');
+        let tabList = box.getElementsByTagName('div'); //获取三个div
+        // console.log(navList,tabList)
+
+        // 2.给相应的元素绑定响应的事件
+        for (var i = 0; i < navList.length; i++) {
+            // navList[i] // 代表每一个li
+            navList[i].myIndex = i; // 给每一个li增加自定义属性，执行值是当前实时的i值，说白了就是把i值存储到自己身上
+            navList[i].onclick = function () {
+                // 在这里函数里边，去操作匀速的class名的有无
+                // 只要你点击li，那此处的函数里的代码就会执行
+                // 当点击第一个li时，实参应该传0
+                // 当点击第二个li时，实参应该传1
+                // 当点击第三个li时，实参应该传2
+
+                // console.log(i) // 每一次点击都是3
+                // console.dir(this)
+                console.log(i)
+                // 当前操作的是谁，this就是谁，
+                check(this.myIndex)
+            }
+        }
+        /* 
+        i = 0
+        navList[0].myIndex = 0;
+        navList[0].onclick = function () {console.log(i)}
+
+        i = 1;
+        navList[1].myIndex = 1;
+        navList[1].onclick = function () {console.log(i)}
+
+        i = 2;
+        navList[2].myIndex = 2;
+        navList[2].onclick = function () {console.log(i)}
+
+        i=3;
+        //当循环结束的时候i的值是3
+        
+         */
+        // 当你点击li的时候，页面已经渲染完成，但是for循环是在你页面渲染的时候执行的，所以当你点击li的时候，for循环早已经执行完成，那此时的i的值是3
+
+        function check(index) { // 假设现在index是0
+        console.log(index,110)
+            // 1.先清除所有li和div的class名
+            for (var i = 0; i < navList.length; i++) {
+                // navList[i] // 代表每一个li
+                navList[i].className = '';
+                tabList[i].className = '';
+            }
+
+            // 2.给相应的li和div加上class名
+            navList[index].className = 'active';
+            tabList[index].className = 'active';
+        }
+
+
+        for(var i = 0;i<3;i++){
+
+        }
+        
+        console.log(i)
+    </script>
+</body>
+
+</html>

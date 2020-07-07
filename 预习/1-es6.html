@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let obj = {};
+    let fn = (context = window,...args) =>{
+        //console.log(arguments);    //arguments is not defined
+        console.log(args);//[10, 20, 30]
+    };
+    fn(obj,10,20,30);
+</script>

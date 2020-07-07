@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    var arr = [12,24,1,12,9,39,4];
+
+   /*插入排序
+    1.先抓一张牌放到手里
+    2.继续抓取桌上的每一张牌和手里的牌从右往右依
+      次做比较，如果抓的牌比手里的牌大了，就直接放到那
+      张牌的后面，并且停止比较
+    3.如果抓的牌比你手里的都小，直接放到做左边*/
+
+
+    function insertSort(arr){
+        var handArr = [];  //代表咱们的手里的牌
+
+        // 1.先抓取第一张牌放到手里
+        handArr.push( arr[0] );
+
+         // 此次循环就是模拟抓取每一张牌
+        for(var i=0;i<arr.length;i++){
+            var gradCard = arr[i]; // 代表抓取的每一张牌
+
+            // 此循环是吧当前抓到的牌和手里的从右往左一次做比较
+            for(var j=handArr.length-1;j>=0;j--){
+                var next = handArr[j];  // 代表你手里的每一张牌
+
+                if(gradCard >= next){
+                    // 如果你当前抓的牌比你手里的牌大了，就直接放到这张牌的后面
+                    handArr.splice(j+1,0,gradCard);
+                    break;
+                }
+                // 如果j的值是0，说明你现在抓取的牌比你手里的牌都小
+                if(j==0){
+                    handArr.unshift(gradCard);
+                }
+            }
+        }
+        return handArr;
+        
+    }
+    console.log( insertSort(arr) );
+</script>

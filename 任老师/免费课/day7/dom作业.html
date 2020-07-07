@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        div input{
+            width: 300px;
+        }
+        li{
+            list-style: none;
+        }
+        ul{
+            width: 640px;
+            margin:20px auto;
+        }
+        ul li{
+            height: 24px;
+            position: relative;
+            line-height: 24px;
+            margin-bottom: 5px;
+            background: pink;
+        }
+        ul li button{
+            position: absolute;
+            right: 0;
+            width: 40px;
+            font-size: 12px;
+            background: oldlace;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text"/>
+        <ul id="list">
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+
+    var enterInp = document.getElementsByTagName('input')[0];
+    var ul = document.getElementById('list');
+
+    enterInp.onblur = function(){
+
+        //获取输入框的值
+        var enterInfo = enterInp.value;
+
+        //创建li和button
+        var li = document.createElement('li');
+        var btn = document.createElement('button');
+        btn.innerHTML = '删除';
+        li.innerHTML = enterInfo;
+        //把li和btn添加到ul里
+        li.appendChild(btn);
+        ul.appendChild(li);
+        //清空输入框的值
+        enterInp.value = '';
+
+        //隔行变色
+        changeColor();
+
+        //点击删除
+        btn.onclick = function(){
+            ul.removeChild(this.parentNode);
+            changeColor();
+        }
+
+        //隔行变色
+        function changeColor(){
+            var lis = ul.querySelectorAll('li');
+            for(var i=0;i<lis.length;i++){
+                if( i%2 == 0 ){
+                    lis[i].style.background = 'pink';
+                }else{
+                    lis[i].style.background = 'plum';
+                }
+            }
+        }
+
+    }
+
+
+
+</script>

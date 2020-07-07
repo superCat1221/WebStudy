@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        #ul{
+            list-style: none;
+            display: flex;
+        }
+        #ul li{
+            width: 100px;
+            height: 30px;
+            margin-right: 5px;
+            border:1px solid black;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+        }
+        #box div{
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            border: 1px solid black;
+            display: none;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 5px;
+        }
+        #ul li.active {
+            background: orange;
+        }
+        #box div.active {
+            display: block;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="ul">
+            <li class="active">111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <div class="active">一</div>
+        <div>二</div>
+        <div>三</div>
+    </div>
+</body>
+</html>
+<script>
+
+    var li = document.querySelectorAll('#box #ul li');
+    var div = document.querySelectorAll('#box div');
+
+    for(var i=0;i<li.length;i++){
+        li[i].index = i;
+        li[i].onclick = function(){
+            select();
+            this.className = 'active';
+            div[this.index].className = 'active';
+        }
+    }
+
+    function select(){
+        for(var i=0;i<li.length;i++){
+            li[i].className = '';
+            div[i].className = '';
+        }
+    }
+
+</script>

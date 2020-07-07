@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        封装queryUrlParams方法
+        let url = 'https://www.baidu.com?wd=手表&name=erYa&age=18&ss=千与千寻';
+
+        let obj = {
+            wd:'手表',
+            name:'erYa',
+            age:18,
+            ss:'千与千寻'
+        }
+         */
+        let url = 'https://www.baidu.com?wd=手表&name=erYa&age=18&ss=千与千寻';
+        //  let url = 'https://www.baidu.com?wd=手表&name=erYa&age=18&ss=千与千寻#index';
+        function queryUrlParams(url) {
+            // 1.从字符串中获取参数部分
+            let paramsIndex = url.indexOf('?'); // 获取参数开始的位置(问号的索引)
+            let paramsStr = url.substring(paramsIndex + 1); //  'wd=手表&name=erYa&age=18&ss=千与千寻'  得到url里的参数部分
+            // console.log(paramsStr)
+            let paramsAry = paramsStr.split('&'); // ["wd=手表", "name=erYa", "age=18", "ss=千与千寻"]
+            // console.log(paramsAry)
+
+            /* 
+            let paramsAry = url.split('?')[1]
+             */
+
+            let obj = {} // 创建一个新对象用来接收参数
+            for (var i = 0; i < paramsAry.length; i++) {
+                // console.log(paramsAry[i])
+                var cur = paramsAry[i]; // "wd=手表"  "name=erYa"
+                // 把数组的每一项以=作为分隔符变成数组，数组的第一项就是键值对的属性名，数组的第二项就是键值对的属性值
+                var item = cur.split('='); // ['wd':'手表']  ['name','erYa']
+                obj[item[0]] = item[1];
+            }
+            // console.log(obj)
+            return obj
+
+        }
+        console.log(queryUrlParams(url))
+
+         // 需求，从以上基础之上把hash值提取出来，然后最后的对象是这样的
+         //  let url = 'https://www.baidu.com?wd=手表&name=erYa&age=18&ss=千与千寻#index';
+        //  let obj = {
+        //     wd:'手表',
+        //     name:'erYa',
+        //     age:18,
+        //     ss:'千与千寻',
+        //     HASH:'index'
+        // }
+    </script>
+</body>
+
+</html>

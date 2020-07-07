@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数的定义：
+         */
+
+        // 需求：把两个数进行求和，然后除以2，最后在控制台进行打印;
+        // let sum = 10 + 12;
+        // sum = sum / 2;
+        // consol.elog(sum);
+
+        // let sum1 = 20 + 30;
+        // sum1 = sum1 / 2;
+        // console.log(sum1);
+
+        // 函数的定义：函数就是方法，可以把实现某个功能的代码封装到一起，以后你想使用这个功能，就直接执行这个方法就好了。减少代码的冗余，提高代码的复用率(高内聚，低耦合)
+
+        /* 
+        榨汁机：
+            生产榨汁机，就是把榨汁这个功能集成到榨汁机里面，榨汁机有一个入口，(可以往里放水果)，还有一个出口(把你炸好的果汁倒出来)
+
+            使用榨汁机： 启动榨汁机，然后把水果放进去，最后在把果汁倒出来
+         */
+
+        // 创建函数
+        function sum(m,n) {
+            // 形参变量
+            // n和m就相当于两个容器
+            let sum = n + m;
+            sum = sum / 2;
+            console.log(sum);
+        };
+
+        // 执行函数：函数名()
+        // 函数执行的时候传递的是实参
+        sum(10,12);
+        sum(20,30);
+        // 函数可以无限制的执行，而且每一次执行都是相互独立的
+        // 函数每执行一次，函数里的代码就会从头到尾在执行一遍
+
+        // parseFloat()
+        // parseInt()
+        // Number()
+        // isNaN()
+
+
+    </script>
+</body>
+
+</html>

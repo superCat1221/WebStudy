@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <!-- 111 -->
+        <li id="flag">3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        let flag = document.getElementById('flag')
+        function prev(ele){
+            // 获取上一个哥哥节点
+            var pre = ele.previousSibling;
+            // 如果获取的哥哥节点的nodeType不是1，说明此节点不是元素节点，要继续循环获取上一个哥哥节点的哥哥节点，直到节点的nodeType为1为止
+            while(pre.nodeType !==1){
+                // 呼气上一个哥哥节点的哥哥节点
+               pre =  pre.previousSibling;
+            }
+            return pre;
+
+        }
+       console.log(prev(flag)) 
+    </script>
+</body>
+</html>

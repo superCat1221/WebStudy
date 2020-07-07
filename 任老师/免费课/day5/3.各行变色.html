@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding:0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            border: 1px solid black;
+            margin: 20px auto;
+        }
+        ul li {
+            line-height: 30px;
+            font-size: 20px;
+            text-align: center;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+            <li>佟湘玉</li>
+
+       
+        </ul>
+        <li>1111</li>
+    </div>
+    <script>
+        // 1.想操作谁就获取谁
+        // 通过id名获取元素只能获取一个
+        let box = document.getElementById('ul') // 要是能够获取到，那就是一个页面中的元素，要是获取不到就是null
+
+        // 通过标签名获取元素
+        // 从ul里边后去对应的元素
+        // context.getElementsByTagName('标签名')
+        let list = box.getElementsByTagName('li');
+        // 获取到的永远是一个类数组集合，
+
+        // 2、拿到元素之后，给对相应的元素做逻辑处理
+       for(var i=0;i<list.length;i++){
+           if(i%2 == 0){
+               // 此条件如果成立的话，如果i是偶数，并且对应的li是奇数行
+               list[i].style.background = 'black';
+           }
+           else {
+            list[i].style.background = 'orange' 
+           }
+
+           list[i].color = list[i].style.background;
+           // 给每一个元素新增键值对，然后键值对的执行值是当前元素的背景颜色
+           // 往元素身上增加自定义属性
+
+        //    console.dir(list[i])
+           // 给每一个li增加鼠标划入和划出事件
+           list[i].onmouseover = function(){
+               // 函数表达式
+               // this:当前你操作的是谁，那this就是谁
+               this.style.background = 'pink';
+           }
+           list[i].onmouseout = function(){
+               this.style.background = this.color;
+            // 在鼠标划入的时候获取在鼠标划入之前，就得把人家的背景颜色存储起来
+            // 把背景颜色存储到当前元素自己身上，因为元素是对象数据类型的
+           }
+       }
+
+
+
+    </script>
+</body>
+</html>

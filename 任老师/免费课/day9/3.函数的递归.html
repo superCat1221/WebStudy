@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数的递归
+        含义：函数自己去调用自己
+        当使用函数递归的时候，咱们都去写一个终止的条件
+         */
+
+        // function fn() {
+        //     console.log(1); // 1 1
+        //     fn(); // 自己让自己执行，并且会死循环
+        // }
+        // fn()
+
+        // let num = 1; // 2 3 4 5 6
+        // function fn(){
+        //     // 我想输出5次1
+        //     if(num>5){
+        //         return;
+        //     }
+        //     console.log(1); // 1 1 1 1 1
+        //     num++;
+        //     fn();
+        // }
+        // fn();
+
+        // 实现1到5之间的和
+        // 1+2+3+4+5 = 15
+        // function fn(num) {
+        //     if (num > 5) {
+        //         return 0
+        //     }
+        //     return num + fn(num + 1);
+        // }
+        // console.log(fn(1)); // 15
+
+        // return 1 + fn(2) // 14
+        //            return 2 + fn(3); // 12
+        //                       return 3 + fn(4); // 9
+        //                                  return 4 + fn(5); // 5
+        //                                            return 5 + fn(6); // 0
+        //                                                       return 0
+
+
+        // 1到3的和 // 6
+        // function fn(1) {
+        
+        //     return 1 + fn(2); // 5
+        // }
+
+        // function fn(2) {
+
+        //     return 2 + fn(3); //3
+        // }
+
+        // function fn(3) {
+        
+        //     return 3 + fn(4); // 0
+        // }
+
+
+        // function fn(4) {
+        //     if (4 > 3) {
+        //         return 0
+        //     }
+      
+        // }
+            // 求1到100之间既能被5整除又能被3整除的数的和，用函数的递归去写
+
+            var val="3px"+3 ? "ok": "no"; 
+            console.log(val)
+    </script>
+</body>
+
+</html>

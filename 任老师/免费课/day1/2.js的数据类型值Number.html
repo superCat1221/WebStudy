@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        js数据类型之Number
+         */
+        // 当你创建变量的时候，变量所代表的的值必须是js数据类型中的一种
+        //  var num = 100;
+        //  num = true;
+        //  num = null;
+        //  num = '中国'
+        //  var num1 = num; // 报错，num未定义
+        // Number类包括：小数、正数，负数， 0, NaN
+        // NaN：不是一个数，但是是Number数据类型的，他和谁都不相等(包括自己)
+        // console.log(12 == 12) // true
+        // console.log(NaN == NaN) // false
+
+        //一、把其他数据类型转化为Number数据类型 Number(val) 这个方法的返回值一定是一个Number数字类型
+
+        // 1、把字符串转化为数字
+        // 1.只要字符串中出现了非有效数字，那转化之后的结果就是NaN
+        // 2.空字符转数字是0
+        // console.log(Number('23')) // 23
+        // console.log(Number('3px')) // NaN
+        // console.log(Number('3.14.15')) // NaN
+        // console.log(Number('  ')) // 0
+        // console.log(Number('')) // 0
+        // console.log(Number('-356')) // -356
+        // console.log(Number('+356')) // 356
+        // console.log(Number('+-99')) // NaN
+
+        // 2.把布尔转数字
+        // console.log(Number(true)) // 1
+        //  console.log(Number(false)) // 0
+
+        // 3.把null和undefined转数字
+        // console.log(Number(null)) // 0
+        // console.log(Number(undefined)) // NaN
+
+        // 4.把普通对象转数字
+        // 把普通对象转数字，对象会默认调用toString方法，先把对象转为字符串，然后在把字符串转数字
+        // 所有的对象转字符串都是 "[object Object]"-->转数字--》NaN
+        // 所有的对象转数字都是NaN
+        // console.log(Number({anme:1,age:2}))// NaN
+
+        // 5.把数组转为数字
+        // 把数组转对象，数组首先会把数组里的每一项都去转字符串，然后在把每一项拼接起来(逗号也得拼接进去)
+        // console.log(Number([1,2,3])); //'1','2','3'-->'1,2,3'-->转数字NaN
+        // console.log(Number([])); // []-->''-->0
+        // console.log(Number([1,{}]));//[1,{}]--> '1',"[object Object]"-->'1,[object Object]'-->NaN
+        // console.log(Number([3.14])); // '3.14'-->3.14
+
+        // 二、parseFloat(val):是把字符串从左往右依次进行提取，直到遇到一个非有效数字为止，把找到的数字返回出去，可以识别一位小数点
+        // console.log(parseFloat('3.88.9.3.3px')); // 3.88
+        // console.log(parseFloat('px3')); // NaN
+        // console.log(parseFloat('px')); // NaN
+        // console.log(parseFloat('3px4rem5em')); // 3
+        // console.log(parseFloat(true)) // NaN
+        // console.log(parseFloat('')) // NaN
+
+
+        // 三、parseInt(val):用法和parseFloat一样，只不过他不可以识别小数点
+
+        // console.log(parseInt('3.88.9.3.3px')); // 3
+        // console.log(parseInt('px3')); // NaN
+        // console.log(parseInt('px')); // NaN
+        // console.log(parseInt('3px4rem5em')); // 3
+        // console.log(parseInt(true)) // NaN
+        // console.log(parseInt('')) // NaN
+
+        //四、 val.toFixed(保留的小数位) ：保留小数点位数，结果是一个字符串，还有四舍五入的机制
+        // var num = 100;
+        // console.log(num.toFixed(2)); // '100.00'
+        // console.log((99.89).toFixed(1)); // '99.9'
+        //  console.log((99.99).toFixed(1)); // '100.0'
+
+
+        // isNaN(val):结果是一个布尔值(true和false) ：如果检测的值是有效数字，那就返回false，如果不是有效数字那就返回true，
+        console.log(isNaN(12)); // false
+        console.log(isNaN(NaN)); // true
+        console.log(isNaN('13px'))// 如果检测的值不是Number类型的，那就用Number方法他其转化为Number类型的值在进行判断    true
+
+       isNaN( Number('13px') ) // 从里往外一层一层的算 true
+
+
+
+
+        // 敲代码  上课好好听  课下复习和预习
+
+
+    </script>
+</body>
+
+</html>

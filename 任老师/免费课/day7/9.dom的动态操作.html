@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p id="p">111</p>
+        <button id="btn">点击移除p标签</button>
+        <input type="text" id="input">
+    </div>
+    <script>
+        // document.createElement('标签名')：在js中动态创建元素节点
+        // document.createTextNode('内容'):在js中动态生成文本节点
+        // 父节点.appendChild(节点)：把指定的节点插入到父节点的末尾
+        // 父节点.insertBefore(n,m):把n插入到m的前面
+        // 父节点.removeChild(你要移除的节点)：移除节点
+
+        // let box = document.getElementById('box');
+        // let ss = document.createElement('div');
+        // let text = document.createTextNode('789');
+
+        // console.dir(text)
+      
+        // box.appendChild(ss)
+        // document.body.appendChild(text) // 把ss元素放到body的末尾
+
+        // ss.appendChild(text);
+        // document.body.appendChild(ss)
+        // console.log(ss)
+
+        //---------------------------------
+         // 父节点.insertBefore(n,m):把n插入到m的前面
+        //  let box = document.getElementById('box');
+        //  let span = document.createElement('span');
+        //  span.innerHTML = '6666';
+        //  document.body.insertBefore(span,box) // 把动态生成的span放到box元素的前面
+
+        //--------------------------------
+        // 点击btn移除p标签
+         // 父节点.removeChild(你要移除的节点)：移除节点
+        // btn.onclick = function(){
+        //     console.log(1)
+        //     box.removeChild(p)
+        // }
+
+        input.onblur = function(){
+            console.log(4444444)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+    #tab{
+        width: 480px;
+        margin: 0 auto;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+    }
+    ul li {
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid black;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    #tab div{
+        width: 500px;
+        height: 280px;
+        display: none;
+    }
+    #tab div img{
+        width: 500px;
+        height: 280px;
+    }
+    .active{
+        background: pink;
+    }
+   </style>
+</head>
+<body>
+    <div id="tab">
+        <ul id="ul">
+            <li class="active">鲁班</li>
+            <li>老吴</li>
+            <li>老马</li>
+        </ul>
+        <div style="display: block;">
+            <img src="1.png"/>
+        </div>
+        <div>
+            <img src="3.png"/>
+        </div>
+        <div>
+            <img src="2.jpeg"/>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    var li = document.querySelectorAll('#tab #ul li');
+
+    var div = document.querySelectorAll('#tab div');
+
+    for(var i=0;i<li.length;i++){
+        li[i].index = i;
+        li[i].onclick = function(){
+            select();
+            this.className = 'active';
+            div[this.index].style.display = 'block';
+        }
+    }
+
+    function select(){
+        for(var i=0;i<li.length;i++){
+            li[i].className = '';
+            div[i].style.display = 'none';
+        }
+    }
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ss">
+        <p>111</p>
+    </div>
+    <input type="text" id="content">
+    <button id="btn">确定</button>
+    <script>
+        // 1.想操作谁就获取谁
+        let ss = document.getElementById('ss'),
+            content = document.getElementById('content'),
+            btn = document.getElementById('btn');
+
+        // 2、给相应的元素绑定相应的事件
+        btn.onclick = function () {
+            // 1.先获取到input的值，
+            // 然后生成一个p标签，p标签的内容是input的值
+            // 把p标签累加到ss元素里
+
+            // 表单元素的内容用value获取
+            let value = content.value;
+            let res = '<p>' + value + '</p>';
+            ss.innerHTML += res; // ss.innerHTML = ss.innerHTML+res
+            // let res1 ='<p>"+value+"</p>' 
+            content.value = '';
+            console.log(res)
+        }
+
+    </script>
+</body>
+
+</html>

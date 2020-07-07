@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let obj = {
+        name:'luban',
+        age:2,
+        sex:'girl',
+        friends:['dad','mom']
+    };
+    //创建的变量要和对象的属性名一致
+    // let {
+    //     name,
+    //     nianling,
+    //     sex
+    // } = obj;
+    // console.log(name,nianling,sex); //luban undefined girl
+
+    // //:（冒号）相当于给获取的结果设置了一个别名（变量名）：创建了一个nianling的变量存储了obj.age的值
+    // let {
+    //     age:nianling
+    // } = obj;
+    // console.log(nianling); //2
+
+    //给获取的结果设置默认值（没有这个属性就走默认值）
+    // let {
+    //     height = "180CM"
+    // } = obj;
+    // console.log(height); //180CM
+
+    //多维对象获取
+    // let{
+    //     name,
+    //     friends:[ first ]
+    // } = obj;
+    // console.log(first);
+    // class Fn{
+    //     constructor(n,m){
+    //         this.x = n+m;
+    //     }
+    //     getX(){console.log(this.x)}
+    //     static queryX(){
+    //         console.log('私有属性')
+    //     }
+    // }
+    //let f = new Fn(1,2)
+
+</script>

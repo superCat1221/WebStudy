@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    var arr = [12,24,1,12,9,39,4,-3,9,20];
+
+    function bubbleSort(arr){
+        for(var i=0;i<arr.length;i++){
+            console.log(i,'i')
+            for(var j=0;j<arr.length-i-0;j++){
+                console.log(j,'j');
+                
+                if(arr[j]>arr[j+1]){
+                    var temp = arr[j]; 
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp; 
+                }
+                
+            }
+        }
+
+        // for (var i = 0; i < arr.length - 1; i++){
+        //     for (var j = i + 1; j < arr.length; j++){
+        //     var tempi = arr[i]; //获取第一个值，并与后一个值比较
+        //     var tempj = arr[j];
+        //     if (tempi > tempj){
+        //         arr[i] = tempj;
+        //         arr[j] = tempi;//如果前一个值比后一个值大，那么相互交换
+        //     }
+        //     }
+        // } 
+
+
+        // for(var i=0;i<arr.length;i++){
+        //     console.log(i+'1')
+        //     for(var j = 0;j<arr.length-i;j++){
+        //         if( arr[j] > arr[j+1] ){
+        //             var temp = arr[j];
+        //             arr[j] = arr[j+1];
+        //             arr[j+1] = temp;
+        //         }
+        //     }
+        // }
+        return arr;
+
+        // a = 12;
+        // b = 13;
+        // c = a; 12
+        // a = b;
+        // b =c;
+    
+
+    };
+
+   console.log(bubbleSort(arr) );
+
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+//插入排序
+     
+         let ary  = [23,23,34,12,45,23];
+         function unique(ary){
+            // 循环数组的每一项，把数组的每一项和他后面的值一一去作比较，如果后面的值和当前正在比较的值相同了，证明这一项是重复的，那就把这一项从原数组中删除
+            for(var i=0;i<ary.length;i++){
+                // 此循环就是循环的数组的每一项
+                var cur = ary[i]; // 23   i=0
+                for(var j = i+1;j<ary.length;j++){
+                    var next = ary[j] // 
+                    if(cur === next){
+                        ary.splice(j,1);
+                        j--;
+
+                    }
+                }
+            }
+            return ary;
+         }
+         console.log(unique(ary))
+
+
+</script>

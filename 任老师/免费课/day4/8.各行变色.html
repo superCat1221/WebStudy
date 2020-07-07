@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            border:1px solid pink;
+            margin: 20px auto;
+            text-align: center;
+        }
+        ul li {
+            line-height: 30px;
+            font-size: 20px;
+            color:green;
+        }
+        /* ul li:nth-child(odd){ */
+            /* odd是奇数 */
+            /* background-color: orangered; */
+        /* } */
+        /* ul li:nth-child(even) { */
+            /* even是偶数 */
+            /* background-color: black; */
+        /* } */
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>佟湘玉</li>
+            <li>白展堂</li>
+            <li>吕轻侯</li>
+            <li>李秀莲</li>
+            <li>郭芙蓉</li>
+        </ul>
+    </div>
+    <script>
+        // 1、想操作谁就获取谁，获取的是每一个li
+        let ul = document.getElementById('ul');
+        // 通过id名获取元素,获取的是一个元素
+
+        // context.getElementsByTagName('标签名')
+        let list = ul.getElementsByTagName('li');
+        // 通过标签获取元素，获取的是元素集合，是一个类数组
+        console.log(list) // [li,li,li,li,li]
+        // list[0].style.background = 'orange'
+        // list[1].style.background = 'black'
+
+        // 偶数行加黑色，奇数行加橙色
+        for(var i = 0;i<list.length;i++){
+            // 判断当前前的i是偶数还是奇数
+            if(i%2 === 0){
+                // 如果i%2等于0，说明i是偶数,但是对应的li是奇数行
+                list[i].style.background = 'orange'
+            }
+            else{
+                //  如果i%2不等于0，说明i是奇数,但是对应的li是偶数行
+                list[i].style.background = 'black'
+            }
+
+            // onmouseover是鼠标的划入事件，当鼠标划入之后对应的函数就会执行
+            list[i].onmouseover = function(){
+                // console.log(this)
+                // this:你操作的是谁，当前的this就是谁
+                this.style.background = 'blue'
+            }
+            // onmouseout鼠标划出的事件，当鼠标划出之后对应的函数就会执行
+            list[i].onmouseout = function(){
+                /// 当鼠标划出当前元素之后，在给人家恢复之前的颜色
+                // 难点：在你划入之前，你得把人家的之前的背景颜色保存下来，当你划出去的时候在重新赋值给人家
+                console.log(222)
+            }
+        }
+
+        // 元素是对象，可以存储东西，你可以把元素的北京颜色存储到自己身上，当用的时候从自己身上获取就行
+
+
+    </script>
+</body>
+</html>

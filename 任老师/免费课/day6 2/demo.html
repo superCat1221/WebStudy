@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+   function sum(){
+
+        var total = null;
+        console.log(arguments)
+        for(var i=0;i<arguments.length;i++){
+
+            if( !isNaN( arguments[i] ) ){
+                total += Number( arguments[i] );
+            }
+
+        }
+        return total;
+ 
+   }
+   total = sum(1,2,3,4,undefined,null,'10');
+   console.log(total)
+
+</script>

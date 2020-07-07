@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        1、用单引号，双引号，反引号包裹起来的都是字符串
+        2、字符串也有length
+        3、字符串也有索引，可以代表么一项的位置，跟数组的索引是一样的
+        4、不能够通过length操作字符串
+
+        // 字符串的方法不会改变原有字符串
+        // 字符串方法的返回值都是改变之后的新的字符串
+
+         */
+        //  let str = '123';
+        //  str.length--;
+        //  console.log(str.length) // 3
+        //  console.log(str[0]) // '1'
+
+        // 1.charAt():通过指定的索引获取对应的字符串，如果获取不到就是空字符串
+            // let str = 'asdqwe';
+            // console.log(str.charAt(100)) // 如果获取不到就是 ''
+            // console.log(str[100]) // undefined
+
+            // console.log(str.charAt(0)) // 'a'
+            // console.log(str[0]) //  'a'
+
+        // 2.charCodeAt():通过指定的索引获取对应的字符的ASCII码
+            // let str = 'asdqwe中';
+            // console.log(str.charCodeAt(0)) // 97
+            // console.log(str.charCodeAt(1)) // 115
+            // console.log(str.charAt(6)) // '中'
+            // console.log(str.charCodeAt(6)) // 20013
+            // console.log('a'>'s') // false
+            // '111'<'9'
+
+        // -----------------------
+        // 字符串的截取
+            // 3.substr(n,m):从索引n开始截取m个，如果传一个参，那就是从n开始，截取到末尾
+               // let str= 'asdqwe';
+                //console.log(str.substr()) // 克隆源字符串
+                //console.log(str.substr(0))// 克隆源字符串
+                //console.log(str.substr(2)) // 'dqwe'
+                // console.log(str.substr(1,2)) // 'sd'
+            // 4.substring(n,m):从索引n开始，截取到索引m(不包含m对应的那一项)，不支持负数
+                // let str= 'asdqwe';
+                // console.log(str.substring(1,2)) // 's'
+                // console.log(str.substring()) // 克隆
+                // console.log(str.substring(0)) // 克隆
+            // 5.slice(n,m):从索引n开始，截取到索引m(不包含m对应的那一项),支持负数
+
+        //--------------------------------------------------------------------------------
+        // 6.split：把字符串以特定的字符转成数组
+            // let str = 'as$df$gg$fh$j';
+            // console.log(str.split('$'))// ['as','df,'gg','fh','j']
+
+            // 我想删除字符串里的指定字符
+            // let str = 'asdasdasd';  // 'sdsdsd' 用split和join
+            // console.log(str.split('a').join('')) //['sd','sd','sd']
+
+        // 7.replace(n,m):把字符串中的n用m进行替换
+            // let str = 'asdawea';
+            // // 默认只能改第一个
+            // // 如果你想改全部的话，就用正则replace(/a/g,'x')
+            // console.log(str.replace('a','x')) // 'xsdawea'
+            // console.log(str.replace(/a/g,'x')) // 'xsdxwex'
+        // -----------------------------------------------------------------
+        // 转大小写系列8、9
+        // let str = 'ssAdAff中国哈喽，。';
+        // console.log(str.toUpperCase()) // 'SSADAFF' 转大写
+        // console.log(str.toLocaleLowerCase()) // 转小写
+       
+       //--------------------
+       // 去空格系列 trim  trimLeft trimRight
+    //    let str = '   a sd    ';
+    //    console.log(str) // 'a sd'
+
+    // 13、indexOf  lastIndexOf   includes  concat
+
+    // 把一个单词的开头字母转大写
+    // let word = 'erya'  // 'Erya'
+    // console.log(word.replace('e','E'))// 'Erya'
+    // console.log(word.substring(0,1).toUpperCase()+word.substring(1)) // 'Erya'
+
+    // 需求：给字符串排序
+    // let str = '1234543421234322';
+    // console.log(str.split('').sort().join(''))
+    
+
+
+        
+        
+
+
+
+    </script>
+</body>
+</html>

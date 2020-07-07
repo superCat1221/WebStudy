@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 5px;
+            background: aqua;
+            position: relative;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            height: 20px;
+            width: 30px;
+            font-size: 12px;
+            background: blueviolet;
+        }
+
+        input {
+            display: block;
+            width: 400px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="input">
+        <ul id="box">
+            <!-- <li>dshdshvdhs<button>删除</button>></li>
+            <li>dshdshvdhs<button>删除</button>></li> -->
+        </ul>
+        <script>
+            // 1.想操作谁就获取谁
+            let input = document.querySelectorAll('#input')[0];
+            let box = document.getElementsByTagName('ul')[0];
+            input.onblur = function () {
+                // 1.获取到input的内容，然后动态生成li元素，再把内容放到li元素中，最后把li插入到ul里边
+                let value = input.value; // 获取input的内容
+                let li = document.createElement('li'); // 动态生成li元素
+                let btn = document.createElement('button'); // 动态生成btn元素
+                btn.innerHTML = '删除';
+
+                li.innerHTML = value; 
+                li.appendChild(btn); // 把btn元素插入到li里边
+                box.appendChild(li); // 把li元素插入到ul里边
+                input.value = '';
+
+                // 各行变色
+                // 获取所有的li，给每一个li增加背景颜色
+                let lis = document.getElementsByTagName('li');
+                for (var i = 0; i < lis.length; i++) {
+                    if (i % 2 === 0) {
+                        lis[i].style.background = 'orange';
+                    }
+                    else {
+                        lis[i].style.background = 'black';
+                    }
+                }
+
+                // 给当前btn是绑定点击事件
+                btn.onclick = function () {
+                    console.log(this.parentNode)
+                    // 父元素.removeChild(要移除的元素)
+                    this.parentNode.parentNode.removeChild(this.parentNode)
+                    // this是当前btn按钮，this.parentNode.parentNode就是ul，然后在ul里移除当前的li
+                    //当移除li元素之后，在给所有的li进行型芯隔行变色
+                    for (var i = 0; i < lis.length; i++) {
+                        if (i % 2 === 0) {
+                            lis[i].style.background = 'orange'
+                        }
+                        else {
+                            lis[i].style.background = 'black'
+                        }
+                    }
+                }
+
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

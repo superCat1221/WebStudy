@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        免费课基础知识复习
+
+        js的变量：容器
+        var let const  function import class
+         */
+        //  var s = 10; // var创建的值允许重复创建
+        //  var s = 10;
+        // let s = 10; // let创建的值不允许重复创建
+        // let s = 10;
+        // const s = 10; // 创建的时候必须给他赋值
+        // function fn(){}
+        // let fn = function(){ }
+        // box.style.backgroundColor
+
+        /* 
+        js中的数据类型
+            基本数据类型
+                number
+                string
+                boolean
+                null
+                undefined
+                symbol
+            引用数据类型
+                对象
+                    object
+                    array
+                    Math
+                    Date的实例
+                    regExp
+                函数
+                    function
+                    类
+        
+        基本类型和引用类型的区别：
+                基本值存储的是值
+                引用至存储的空间地址
+        
+        number：
+            Number：把其他数据类型转数字
+            isNaN：检测当前值是否是一个非有效数字，如果是一个有效数字，返回false，反之返回true
+            parseInt：把字符串转数字，不识别小数
+            parseFloat：识别小数
+            toFixed：他的返回值是一个字符，可以保留小数位
+        string：
+            null和undefined不能够直接调用toString方法
+            toString：把其他数据类型转字符串
+            四则运算：
+                字符串拼接：
+                    在拼接的过程中，如果拼的是基本值，就直接拼，如果拼的引用值，还必须得把引用值转为字符串在拼接
+        null
+        undefined
+        boolean：
+            把其他数据类型转布尔
+            Boolean
+            把其他数据类型转布尔有且只有 null、un 0、''、NaN是fasle，其余的都是true
+            !:转布尔取反
+            !!：转布尔取反在取反 等价于Boolean
+        
+        获取：
+            对象名.属性名
+            对象名['属性名'] 、、 如果属性名是数字，那只能用[]形式去获取
+        
+        对象名.属性名 = xxx  、、 属姓名存在就是修改 ，不存在就是新增
+
+        delete 对象名.属性名  删除
+
+        数组：
+            天生自带length，代表数组的长度
+            从0开始一次递增，可以代表每一项的位置
+            直接操作length就可以控制数组的删除
+
+        数据类型的比较
+            对象 == 对象：空间地址
+            对象 == 字符很惨：比较的字符串
+
+            null == null  un == un  null == un
+            除了以上三种情况，null和un和谁都不相等
+
+
+        ||  && 
+        %
+        i++/i--:先取值后运算
+        ++i/--i:先运算后取值
+        +=、-=
+
+
+        3 && 5 && true && 0
+         0 || 1
+         if(3 && 5 && true && 0){}
+         */
+
+         /* 
+         三个循环，三个判断
+
+         // if条件判断必须得有if
+         if(){
+
+         }
+
+         if(){
+             
+         }else {
+
+         }
+
+         if(){
+
+         }else if(){
+
+         }else if(){
+
+         }else {
+
+         }
+
+         如果if后面只有一行代码，可以省略大括号
+         if(true)console.log(111)
+
+         三元运算符：就是书写简单的if条件判断的
+         判断条件 ? 条件成立做的事 : 条件不成立做的事
+         判断条件 ? (做的事1,做的事2) : 条件不成立做的事
+
+         switch case:绝对判断
+         switch(val){
+            case val1 :
+                做的事;
+                break;
+            case val2 :
+                做的事;
+                break;
+            default:
+                做的事
+         }
+
+         for(var b = 0;b<3;b++){
+             console.log(b)
+         }
+
+
+         for(var key in obj){
+            key:是每一个键值对的属性名
+            obj[key] // 获取每一个键值对的属性值
+         }
+
+         while(条件){
+            // 主要用于不知道循环多少次的循环
+
+         }
+
+
+         typeof:检测数据类型
+        instanceof
+        constructor
+        Object.prototypr.toString.call()
+
+        typeof:
+         返回值是一个字符串，字符串里存放的是当前的数据类型
+         // 检测null、普通对象、数组。返回值都是 'object'，所以说他不能够区别这个三个数据类型
+
+
+          */
+
+        //  var a = 10;
+        //  var b = 12;
+        //  var c = 13;
+
+        //  var a = 10,
+        //     b = 12,
+        //     c = 13;
+        //  let obj = {
+        //      name:1,age:2
+        //  } 
+        //   for(var key in obj){
+        //     console.log(key)
+        //  }   
+        //  console.log(key)
+    </script>
+</body>
+</html>

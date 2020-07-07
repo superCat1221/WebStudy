@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        数组去重
+         */
+        //  let ary = [23,23,23,34,34,23,34];
+         // 利用对象的属性名如果重复下边会覆盖上边的
+        //  function unique(ary){
+        //     // 1.创建空对象
+        //     // 循环数组，把数组的每一项当做属性名和属性值新增到对象中
+
+        //     // 2.新增数组
+        //     // 遍历对象，把对象每一个键值对的属性值新增到新数组中
+
+        //     let obj = {};
+        //     for(var i=0;i<ary.length;i++){
+        //         let cur = ary[i];
+        //         obj[cur] = cur;
+        //     }
+
+        //     let newAry = [];
+        //     for(var key in obj){
+        //         newAry.push(obj[key])
+        //     }
+        //     return newAry;
+        //  }
+        //  console.log(unique(ary))
+
+
+        // 利用对象的属性名如果存在，那就不是undefined
+        // let ary = [23,23,23,34,34,23,34];
+        // function unique(ary){
+        //     // 1.创建空对象，循环数组的每一项当做属性名和属性值往对象里新增键值对，但是新增的时候得判断一下，如果当前属性名在对象中有，说明你这一项在数组中就是重复的，就可以在数组中删除这一项，
+        //     let obj ={};
+        //     for(var i = 0;i<ary.length;i++){
+        //         if(obj[ary[i]] !== undefined){
+        //             // 删除数组中的那一项
+        //             // ary[i] = ary[ary.length-1];
+        //             // ary.length--;
+        //             ary.splice(i,1);
+        //             i--;
+        //         }
+        //         else {
+        //            obj[ary[i]] = ary[i] 
+        //         }
+                
+        //     }
+        //     return ary
+        // }
+        // console.log(unique(ary))
+        // 原数组会发生变化
+
+
+        // 双for循环
+        // 外层循环循环一次，里边的小循环会循环一整轮
+        let ary = [23,22,11,23,23,22,11]
+        function unique(ary){
+            // 循环数组的每一项，把数组的每一项和他后面的值一一去做比较，如果后面的值和当前项相同了，就把这一项在原数组中删除
+
+            // 循环数组的每一项
+            for(var i = 0;i<ary.length;i++){
+                var cur = ary[i] // 23 22
+                // 那23去和他后面的值一一做比较
+
+                // 此循环是那当前的cur去和他后面的值一一做比较
+                for(var j=i+1;j<ary.length;j++){
+                    var next = ary[j]; // 
+                    // j=1  22
+                    // j=2  11
+                    // j=3  23
+                    if(cur === next){
+                        // 如果cur和他后面的值相同了，那就把这个值从原数组中删除
+                        ary.splice(j,1);
+                        j--;
+                    }
+                }
+            }
+            return ary
+        }
+        console.log(unique(ary))
+
+        for(var x = 0;x<5;x++){
+            for(var z = 0;z<3;z++){
+                console.log(1)
+            }
+        }
+    </script>
+</body>
+</html>
